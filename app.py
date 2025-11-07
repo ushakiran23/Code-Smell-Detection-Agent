@@ -17,7 +17,8 @@ if uploaded_file is not None:
                 files = {"file": (uploaded_file.name, io.BytesIO(uploaded_file.getvalue()), "text/x-python")}
 
                 # Send request to FastAPI backend
-                response = requests.post("http://127.0.0.1:8000/analyze", files=files)
+                response = requests.post("https://code-smell-detection-agent.onrender.com", files=files)
+
 
                 if response.status_code == 200:
                     data = response.json()
@@ -43,3 +44,4 @@ if uploaded_file is not None:
                 st.error("🚫 Cannot connect to backend. Please ensure FastAPI is running.")
             except Exception as e:
                 st.error(f"Unexpected error: {str(e)}")
+
