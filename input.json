@@ -1,0 +1,8 @@
+[
+  {
+    "key": "report",
+    "label": "Code Smell Report",
+    "description": "JSON report listing detected code smells and recommendations",
+    "types": ["json", "string", "object"]
+  }
+]
